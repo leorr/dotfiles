@@ -1,0 +1,72 @@
+* {
+	min-height: 12px;
+	font-size: 11px;
+	font-family: "GohuFont Powerline";
+}
+
+window#waybar {
+	background: rgba(18,11,13,0.25);
+	color: #FFEEBE;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#backlight,
+#memory,
+#cpu,
+#temperature,
+#battery,
+#network,
+#tray {
+	background: rgba(18,11,13,0.25);
+}
+
+#workspaces button {
+	padding: 0 2px;
+	color: #4c4739;
+}
+#workspaces button.focused {
+	color: #ffeebe;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: rgba(18,11,13,0.25);
+	border: #1a1a1a;
+	padding: 0 3px;
+}
+
+#pulseaudio {
+	color: #FF9566;
+}
+#network{
+	color: #FF5B6A;
+}
+#backlight {
+	color: #9EB2B4;
+}
+#battery {
+	color: #8ACD8F;
+}
+
+#clock,
+#pulseaudio,
+#backlight,
+#memory,
+#cpu,
+#temperature,
+#battery {
+	padding: 0 10px;
+}
+
+#clock,
+#clock#1,
+#clock#2,
+#clock#3 {
+	color: #FFEEBE;
+}
