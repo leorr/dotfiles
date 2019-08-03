@@ -1,5 +1,13 @@
 call plug#begin('~/.vim/plugged')
+	Plug 'ycm-core/YouCompleteMe'
+	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
+	Plug 'calviken/vim-gdscript3'
 call plug#end()
+
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 
 set incsearch ignorecase smartcase hlsearch
 set clipboard=unnamedplus

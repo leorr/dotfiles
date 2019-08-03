@@ -1,12 +1,18 @@
 #autostarts
 exec swaybg -i Images/eva.png -m fill
-exec redshift -t 7000:4000
+exec redshift -l -23:-46 -t 7000K:4000K
 exec waybar
 
 #input configs
 input "1267:12402:ELAN0630:00_04F3:3072_Touchpad" {
-    tap enabled
+	tap enabled
+	dwt enables
 }
+input "1133:16468:Logitech_Wireless_Mouse" {
+	accel_profile flat
+	pointer_accel 0
+}
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -35,132 +41,138 @@ set $menu rofi -show run -font "Terminus (TTF) 12" -lines 2 -width 20 -separator
 	bindsym XF86MonBrightnessUp exec light -A 2.5
 	bindsym XF86MonBrightnessDown exec light -U 2.5
 	# media
-	bindsym $mod+period exec playerctl next
-	bindsym $mod+comma exec playerctl previous
-	bindsym $mod+slash exec playerctl play-pause
+	bindsym $mod+period exec playerctl next -p spotify
+	bindsym $mod+comma exec playerctl previous -p spotify
+	bindsym $mod+slash exec playerctl play-pause -p spotify
+	#prints
+	bindsym --release Print exec grim -g \"$(slurp)" - | wl-copy
 
 #
 # Basics:
 #
-    # start the web browser
-    bindsym $mod+w exec google-chrome-stable
+	# start the web browser
+	bindsym $mod+w exec google-chrome-stable
 
-    # start a terminal
-    bindsym $mod+Return exec $term
+	# start a terminal
+	bindsym $mod+Return exec $term
 
-    # kill focused window
-    bindsym $mod+Shift+q kill
+	# kill focused window
+	bindsym $mod+Shift+q kill
 
-    # start your launcher
-    bindsym $mod+d exec $menu
+	# start your launcher
+	bindsym $mod+d exec $menu
 
-    # drag floating windows
-    floating_modifier $mod normal
+	# drag floating windows
+	floating_modifier $mod normal
 
-    # reload the configuration file
-    bindsym $mod+Shift+c reload
+	# reload the configuration file
+	bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+	# exit sway (logs you out of your Wayland session)
+	bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
-    # _move_ the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+	# Move your focus around
+	bindsym $mod+$left focus left
+	bindsym $mod+$down focus down
+	bindsym $mod+$up focus up
+	bindsym $mod+$right focus right
+	# _move_ the focused window with the same, but add Shift
+	bindsym $mod+Shift+$left move left
+	bindsym $mod+Shift+$down move down
+	bindsym $mod+Shift+$up move up
+	bindsym $mod+Shift+$right move right
 #
 # Workspaces:
 #
-    # switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
-    # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+	# switch to workspace
+	bindsym $mod+bracketright workspace next
+	bindsym $mod+bracketleft workspace prev
+	bindsym $mod+tab workspace back_and_forth
+
+	bindsym $mod+1 workspace 1
+	bindsym $mod+2 workspace 2
+	bindsym $mod+3 workspace 3
+	bindsym $mod+4 workspace 4
+	bindsym $mod+5 workspace 5
+	bindsym $mod+6 workspace 6
+	bindsym $mod+7 workspace 7
+	bindsym $mod+8 workspace 8
+	bindsym $mod+9 workspace 9
+	bindsym $mod+0 workspace 10
+	# move focused container to workspace
+	bindsym $mod+Shift+1 move container to workspace 1
+	bindsym $mod+Shift+2 move container to workspace 2
+	bindsym $mod+Shift+3 move container to workspace 3
+	bindsym $mod+Shift+4 move container to workspace 4
+	bindsym $mod+Shift+5 move container to workspace 5
+	bindsym $mod+Shift+6 move container to workspace 6
+	bindsym $mod+Shift+7 move container to workspace 7
+	bindsym $mod+Shift+8 move container to workspace 8
+	bindsym $mod+Shift+9 move container to workspace 9
+	bindsym $mod+Shift+0 move container to workspace 10
+	# Note: workspaces can have any name you want, not just numbers.
+	# We just use 1-10 as the default.
 #
 # Layout stuff:
 #
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+	# You can "split" the current object of your focus with
+	# $mod+b or $mod+v, for horizontal and vertical splits
+	# respectively.
+	bindsym $mod+b splith
+	bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
-    bindsym $mod+e layout toggle split
+	# Switch the current container between different layout styles
+	bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+	# Make the current focus fullscreen
+	bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+	# Toggle the current focus between tiling and floating mode
+	bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+	# Swap focus between the tiling area and the floating area
+	bindsym $mod+space focus mode_toggle
 
-    # move focus to the parent container
-    bindsym $mod+a focus parent
+	# move focus to the parent container
+	bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
-    # Sway has a "scratchpad", which is a bag of holding for windows.
+	# Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
 
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+	# Move the currently focused window to the scratchpad
+	bindsym $mod+Shift+minus move scratchpad
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+	# Show the next scratchpad window or hide the focused scratchpad window.
+	# If there are multiple scratchpad windows, this command cycles through them.
+	bindsym $mod+minus scratchpad show
 #
 # Resizing containers:
 #
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 20px
-    bindsym $down resize grow height 20px
-    bindsym $up resize shrink height 20px
-    bindsym $right resize grow width 20px
+	# left will shrink the containers width
+	# right will grow the containers width
+	# up will shrink the containers height
+	# down will grow the containers height
+	bindsym $left resize shrink width 20px
+	bindsym $down resize grow height 20px
+	bindsym $up resize shrink height 20px
+	bindsym $right resize grow width 20px
 
-    # return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+	# return to default mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
 
 default_border pixel 2
 
-client.focused          #ffeebec0 #ffeebe #000000 #8ACD8F #ffeebec0
+client.focused		  #ffeebec0 #ffeebe #000000 #8ACD8F #ffeebec0
 client.focused_inactive #33333300 #5f676a00 #ffffff00 #484e5000 #5f676a00
-client.unfocused        #33333300 #22222200 #88888800 #292d2e00 #22222200
-client.urgent           #2f343a00 #90000000 #ffffff00 #90000000 #90000000
-client.placeholder      #00000000 #0c0c0c00 #ffffff00 #00000000 #0c0c0c00
+client.unfocused		#33333300 #22222200 #88888800 #292d2e00 #22222200
+client.urgent		   #2f343a00 #90000000 #ffffff00 #90000000 #90000000
+client.placeholder	  #00000000 #0c0c0c00 #ffffff00 #00000000 #0c0c0c00

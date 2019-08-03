@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-	background: rgba(18,11,13,0.25);
+	background: rgba(25, 8, 13,0.95);
 	color: #FFEEBE;
 }
 
@@ -21,7 +21,7 @@ window#waybar {
 #battery,
 #network,
 #tray {
-	background: rgba(18,11,13,0.25);
+	background: rgba(25, 8, 13,0);
 }
 
 #workspaces button {
@@ -36,7 +36,7 @@ window#waybar {
 	text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: rgba(18,11,13,0.25);
+	background: rgba(25, 8, 13,0.95);
 	border: #1a1a1a;
 	padding: 0 3px;
 }
@@ -61,7 +61,7 @@ window#waybar {
 #cpu,
 #temperature,
 #battery {
-	padding: 0 10px;
+	padding: 0 20px;
 }
 
 #clock,
