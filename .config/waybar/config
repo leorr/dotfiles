@@ -1,5 +1,5 @@
 {
-	"layer": "top",
+	"layer": "bottom",
 	"position": "top",
 
 	"modules-left": [
@@ -11,19 +11,60 @@
 		"clock#3"
 	],
 	"modules-right": [
+		"custom/gkb",
+		"custom/arroworange",
 		"pulseaudio",
+		"custom/arrowblue",
 		"backlight",
+		"custom/arrowmagenta",
 		"network",
+		"custom/arrowcyan",
 		"battery",
+		"custom/arrowblack",
 		"tray"
 	],
 	"sway/workspaces": {
 		"disable-scroll": true,
-		"format": "{name}"
+		"format": "{icon}{name}",
+		"format-icons": {
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
+	"custom/gkb": {
+	    "format": " {} ",
+	    "max-length": 40,
+	    "interval": 1,
+	    "exec": "/home/leorr/.config/waybar/grep_kb.sh 2> /dev/null"
+	},
+	"custom/arrowblack": {
+		"format": "",
+		"tooltip": false	
+	},
+	"custom/arrowblue": {
+		"format": "",
+		"tooltip": false	
+	},
+	"custom/arroworange": {
+		"format": "",
+		"tooltip": false	
+	},
+	"custom/arrowcyan": {
+		"format": "",
+		"tooltip": false	
+	},
+	"custom/arrowmagenta": {
+		"format": "",
+		"tooltip": false	
 	},
 
+
+
+
+
 	"clock#1": {
-		"format": "{:%A}",
+		"format": "{:%A} ",
 		"tooltip": false
 	},
 	"clock#2": {
@@ -31,19 +72,17 @@
 		"tooltip": false
 	},
 	"clock#3": {
-		"format": "{:%m/%d}",
+		"format": "{:%d/%m}",
 		"tooltip": false
 	},
 	"backlight": {
 		"format": " {percent}%"
 	},
 	"network": {
-		"format": "  {essid} "
+		"format": "      {essid}({signalStrength}%)     "
 	},
 	"pulseaudio": {
-		"format": "{icon}  {volume}%",
-		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "MUTE",
+		"format": "{icon} {volume}%",
 		"format-icons": {
 			"headphones": "",
 			"default": [
@@ -51,9 +90,7 @@
 				""
 			]
 		},
-		"scroll-step": 5,
-		"on-click": "pamixer -t",
-		"on-click-right": "pavucontrol"
+		"on-click": "pavucontrol"
 	},
 	"memory": {
 		"interval": 5,
@@ -79,7 +116,8 @@
 		]
 	},
 	"tray": {
-		"icon-size": 20
+	    "icon-size": 18,
+	    "spacing": 30
 	}
 }
 
