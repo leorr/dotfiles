@@ -1,112 +1,71 @@
 * {
-	border:none;
-	min-height: 10px;
-	font-family: "undefined";
-	font-size: 11px;
+    border:        none;
+    border-radius: 0;
+    font-family:   Sans;
+    font-size:     15px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
 }
 
-window#waybar {
-	background: rgba(25, 8, 25,0.00);
-	color: #ffeebe;
+window {
+    color:      rgba(217, 216, 216, 1);
+    background: rgba(35, 31, 32, 0.00);
 }
 
-#workspaces,
-#clock.1
-#clock.2,
-#clock.3,
-#pulseaudio,
-#backlight,
-#memory,
-#cpu,
-#temperature,
-#battery,
-#network,
-#tray {
-    background: rgba(25, 8, 25,0.00);
+window#waybar.solo {
+    color:      rgba(217, 216, 216, 1);
+    background: rgba(35, 31, 32, 0.85);
+}
+
+#workspaces {
+    margin: 0 5px;
 }
 
 #workspaces button {
-    padding: 0 2px;
-    color: #4c4739;
+    padding:    0 5px;
+    color:      rgba(217, 216, 216, 0.4);
 }
+
+#workspaces button.visible {
+    color:      rgba(217, 216, 216, 1);
+}
+
 #workspaces button.focused {
-    color: #ffeebe;
-}
-#workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-}
-#workspaces button:hover {
-    background: rgba(25, 8, 13,0.00);
-    border: #1a1a1a;
-    padding: 0 3px;
+    border-top: 3px solid rgba(217, 216, 216, 1);
+    border-bottom: 3px solid rgba(217, 216, 216, 0);
 }
 
-#pulseaudio {
-    background-color: #FF9566;
-    color: #000000;
-    font-size: 10px;
-}
-#network{
-    background-color: #ff6ea3;
-    color: #000000;
-    font-size: 10px;
-}
-#backlight {
-    background-color: #85c2ff;
-    color: #000000;
-    font-size: 10px;
-}
-#battery {
-    background-color: #6aeb97;
-    color: #000000;
-    font-size: 10px;
+#workspaces button.urgent {
+    color:      rgba(238, 46, 36, 1);
 }
 
-#clock,
-#pulseaudio,
-#backlight,
-#memory,
-#cpu,
-#temperature,
-#battery {
-    padding: 0 20px;
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
+    margin:     0px 6px 0px 10px;
+    min-width:  25px;
 }
 
-#custom-arrowblue,
-#custom-arroworange, 
-#custom-arrowcyan,
-#custom-arrowmagenta {
-    font-size: 13px;
-    font-family: "Fira Code";
-}
-#custom-arrowcyan {
-    color: #6aeb97;
-    background-color: #ff6ea3;
-}
-#custom-arrowblue {
-    color: #85c2ff;
-    background-color: #FF9566;
-}
-#custom-arroworange {
-    color: #FF9566;
-    background: rgba(25, 8, 25,0.00);
-}
-#custom-arrowmagenta {
-    color: #ff6ea3;
-    background-color: #85c2ff;
-}
-#custom-arrowblack {
-    color: #190819;
-    background-color: #6aeb97;
+#clock {
+    margin:     0px 16px 0px 10px;
+    min-width:  140px;
 }
 
+#battery.warning {
+   color:       rgba(255, 210, 4, 1);
+}
 
+#battery.critical {
+    color:      rgba(238, 46, 36, 1);
+}
 
-#clock,
-#clock#1,
-#clock#2,
-#clock#3 {
-    color: #ffeebe;
-    font-size: 11px;
+#battery.charging {
+    color:      rgba(217, 216, 216, 1);
+}
+
+#custom-storage.warning {
+    color:      rgba(255, 210, 4, 1);
+}
+
+#custom-storage.critical {
+    color:      rgba(238, 46, 36, 1);
 }

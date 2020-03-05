@@ -46,7 +46,11 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
+gcp(){
+	git add -A 
+	git commit -m "$(date "+%Y/%m/%d %H:%M") $1 $2 $3 $4 $5 $6 $7 $8 $9"
+	git push
+}
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
     tmp="$(mktemp)"
