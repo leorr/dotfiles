@@ -1,0 +1,51 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 24,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["network","battery", "clock", "tray"],
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": true
+    },
+    "clock": {
+        "format": "{:%a %d/%m %H:%M}",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% ",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "network": {
+        "format": "{essid}  {icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": [""],
+            "ethernet": [""],
+            "disconnected": ["offline"]
+        },
+        "on-click": "termite -e nmtui",
+    "tooltip": false
+    },
+    "tray": {
+        "icon-size": 24
+    }
+}
