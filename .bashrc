@@ -10,7 +10,7 @@ PS1="\[\033[38;5;12m\]\w/ \[$(tput sgr0)\] "
 alias ls='ls --color=auto'
 alias rwifi='sudo systemctl restart wpa_supplicant.service'
 alias ase='/home/leorr/.steam/SteamApps/common/Aseprite/aseprite -b'
-alias steamupdate='steamcmd +login lieonerdo +app_update 431730 +quit'
+alias steamupdate='steamcmd +login lieonerdo +app_update 431730 +app_update 404790 +quit'
 alias diary='vim /home/leorr/.diary/$(date -d "" +"%d-%m")'
 
 #functions

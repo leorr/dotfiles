@@ -1,12 +1,13 @@
 set $mod Mod4
 font pango:monospace 8
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id polybar -r leorrbar
+exec --no-startup-id polybar -r example
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id redshift 6500:3500
 exec --no-startup-id unclutter -idle 1
-exec --no-startup-id feh --bg-fill /home/leorr/Wallpapers/Simonm
-
+exec --no-startup-id dunst
+exec --no-startup-id feh --bg-fill /home/leorr/wallpapers/jcltn21rfg451.jpg
+exec --no-startup-id picom --vsync --unredir-if-possible --detect-client-opacity -i 1 -b
+exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -20,9 +21,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Light to control backlight
-set $mod+Up exec "sudo light -A 10"
+bindsym $mod+Up exec 	dunstify $(light -A 10 && light -G)
+bindsym $mod+Down exec 	dunstify $(light -U 10 && light -G) 	
 
-set $mod+Down exec xbacklight -dec 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -33,7 +34,7 @@ bindsym $mod+Return exec st
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun -modi drun -show-icons
 
 # spotify shortcuts
 bindsym $mod+period exec playerctl -p spotify next
@@ -62,8 +63,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
 #bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -140,6 +141,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+client.focused #190819 #190819 #000000 #4fff8c #ffb52a
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
