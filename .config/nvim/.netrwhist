@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/leorr/.config/polybar'
+let g:netrw_dirhist_5='/home/leorr/developer-roadmap/src'
+let g:netrw_dirhist_4='/home/leorr/.config/polybar'
+let g:netrw_dirhist_3='/home/leorr/space/Scripts/old_shit'
+let g:netrw_dirhist_2='/home/leorr/.config/awesome'
 let g:netrw_dirhist_1='/home/leorr/st'
-let g:netrw_dirhist_2='/usr/share/terminfo'
-let g:netrw_dirhist_3='/home/leorr/.config/waybar'
