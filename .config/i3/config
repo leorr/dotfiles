@@ -1,12 +1,11 @@
 set $mod Mod4
-font pango:monospace 8
 exec --no-startup-id polybar -r example
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id redshift 6500:3500
 exec --no-startup-id unclutter -idle 1
 exec --no-startup-id dunst
-exec --no-startup-id feh --bg-fill /home/leorr/wallpapers/jcltn21rfg451.jpg
-exec --no-startup-id picom --vsync --unredir-if-possible --detect-client-opacity -i 1 -b
+exec --no-startup-id feh --bg-fill /home/leorr/wallpapers/k2uMaYC.jpg
+exec --no-startup-id picom --vsync -i 1 -CGb
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
@@ -21,8 +20,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Light to control backlight
-bindsym $mod+Up exec 	dunstify $(light -A 10 && light -G)
-bindsym $mod+Down exec 	dunstify $(light -U 10 && light -G) 	
+bindsym $mod+Up exec 	dunstify $(light -A 3 && light -G) -r 133 && sleep 2 && dunstify --close=133
+bindsym $mod+Down exec 	dunstify $(light -U 3 && light -G) -r 133 && sleep 2 && dunstify --close=133
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -142,7 +142,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-client.focused #190819 #190819 #000000 #4fff8c #ffb52a
+client.focused #22272C #2CC46E #000000 #FF6565 #2CC46E
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

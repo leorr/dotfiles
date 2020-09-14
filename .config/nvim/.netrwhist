@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/leorr/.config/rofi/modi'
 let g:netrw_dirhist_6='/home/leorr/.config/polybar'
 let g:netrw_dirhist_5='/home/leorr/developer-roadmap/src'
 let g:netrw_dirhist_4='/home/leorr/.config/polybar'

@@ -29,13 +29,12 @@ set number
 set cursorline
 hi SignColumn ctermbg=none
 hi CursorLine cterm=none ctermbg=black
-hi LineNr ctermfg=darkblue
-hi CursorLineNr cterm=bold ctermfg=blue ctermbg=black
+hi LineNr ctermfg=darkgrey
+hi CursorLineNr ctermfg=grey ctermbg=black
 hi VertSplit cterm=none
 hi Pmenu ctermbg=black ctermfg=white
 hi PmenuSel cterm=underline ctermbg=black ctermfg=white
 hi PmenuSbar cterm=none ctermbg=none ctermfg=white
-hi Comment ctermfg=darkblue
 hi SpecialKey ctermfg=blue
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
