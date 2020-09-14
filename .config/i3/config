@@ -5,7 +5,7 @@ exec --no-startup-id redshift 6500:3500
 exec --no-startup-id unclutter -idle 1
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill /home/leorr/wallpapers/k2uMaYC.jpg
-exec --no-startup-id picom --vsync -i 1 -CGb
+exec --no-startup-id picom --vsync -i 1 -m 1 -CGb
 exec --no-startup-id nm-applet
 
 set $refresh_i3status killall -SIGUSR1 i3status
